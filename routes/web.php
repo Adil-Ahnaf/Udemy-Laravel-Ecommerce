@@ -21,6 +21,8 @@ Route::get('user/logout', 'HomeController@Logout')->name('user.logout');
 Route::get('change-password', 'Auth\ChangePasswordController@ChangePasswordForm')->name('change.password');
 Route::post('change-password', 'Auth\ChangePasswordController@ChangePassword')->name('update.password');
 
+
+
 //------Admin Routes--------
 Route::get('/admin/home', 'AdminController@index');
 Route::get('admin', 'Admin\LoginController@showLoginForm')->name('admin.login');
@@ -36,3 +38,24 @@ Route::post('admin/password/email', 'Admin\ForgotPasswordController@sendResetLin
 Route::get('admin/password/reset/{token}', 'Admin\ResetPasswordController@showResetForm')->name('admin.password.reset');
 
 Route::post('admin/password/reset', 'Admin\ResetPasswordController@reset')->name('admin.password.update');
+
+
+// ------Admin Section--------
+		//-------Category Controller---
+Route::get('admin/category', 'Admin\Category\CategoryController@Category')->name('categories');
+Route::post('admin/store/category', 'Admin\Category\CategoryController@StoreCategory')->name('store.categories');
+Route::get('delete/category/{id}', 'Admin\Category\CategoryController@DeleteCategory');
+Route::get('edit/category/{id}', 'Admin\Category\CategoryController@EditCategory');
+Route::post('update/category/{id}', 'Admin\Category\CategoryController@UpdateCategory');
+		//-------Brand Controller---
+Route::get('admin/brand', 'Admin\Category\BrandController@Brand')->name('brands');
+Route::post('admin/store/brand', 'Admin\Category\BrandController@StoreBrand')->name('store.brands');
+Route::get('delete/brand/{id}', 'Admin\Category\BrandController@DeleteBrand');
+Route::get('edit/brand/{id}', 'Admin\Category\BrandController@EditBrand');
+Route::post('update/brand/{id}', 'Admin\Category\BrandController@UpdateBrand');
+		//--------Sub Category------
+Route::get('admin/sub/category', 'Admin\Category\SubCategoryController@SubCategory')->name('sub.categories');
+Route::post('admin/store/subcategory', 'Admin\Category\SubCategoryController@StoreSubCategory')->name('store.sub.categories');
+Route::get('delete/sub/category/{id}', 'Admin\Category\SubCategoryController@DeleteSubcategory');
+Route::get('edit/sub/category/{id}', 'Admin\Category\SubCategoryController@EditSubcategory');
+Route::post('update/sub-category/{id}', 'Admin\Category\SubCategoryController@UpdateSubcategory');
