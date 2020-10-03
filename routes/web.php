@@ -22,7 +22,6 @@ Route::get('change-password', 'Auth\ChangePasswordController@ChangePasswordForm'
 Route::post('change-password', 'Auth\ChangePasswordController@ChangePassword')->name('update.password');
 
 
-
 //------Admin Routes--------
 Route::get('/admin/home', 'AdminController@index');
 Route::get('admin', 'Admin\LoginController@showLoginForm')->name('admin.login');
@@ -47,15 +46,33 @@ Route::post('admin/store/category', 'Admin\Category\CategoryController@StoreCate
 Route::get('delete/category/{id}', 'Admin\Category\CategoryController@DeleteCategory');
 Route::get('edit/category/{id}', 'Admin\Category\CategoryController@EditCategory');
 Route::post('update/category/{id}', 'Admin\Category\CategoryController@UpdateCategory');
+
 		//-------Brand Controller---
 Route::get('admin/brand', 'Admin\Category\BrandController@Brand')->name('brands');
 Route::post('admin/store/brand', 'Admin\Category\BrandController@StoreBrand')->name('store.brands');
 Route::get('delete/brand/{id}', 'Admin\Category\BrandController@DeleteBrand');
 Route::get('edit/brand/{id}', 'Admin\Category\BrandController@EditBrand');
 Route::post('update/brand/{id}', 'Admin\Category\BrandController@UpdateBrand');
+
 		//--------Sub Category------
 Route::get('admin/sub/category', 'Admin\Category\SubCategoryController@SubCategory')->name('sub.categories');
 Route::post('admin/store/subcategory', 'Admin\Category\SubCategoryController@StoreSubCategory')->name('store.sub.categories');
 Route::get('delete/sub/category/{id}', 'Admin\Category\SubCategoryController@DeleteSubcategory');
 Route::get('edit/sub/category/{id}', 'Admin\Category\SubCategoryController@EditSubcategory');
 Route::post('update/sub-category/{id}', 'Admin\Category\SubCategoryController@UpdateSubcategory');
+
+		//---------Coupon--------
+Route::get('admin/coupon', 'Admin\Category\CouponController@Coupon')->name('admin.coupon');
+Route::post('admin/store/coupon', 'Admin\Category\CouponController@StoreCoupon')->name('store.coupons');
+Route::get('delete/coupon/{id}', 'Admin\Category\CouponController@DeleteCoupon');
+Route::get('edit/coupon/{id}', 'Admin\Category\CouponController@EditCoupon');
+Route::post('update/coupon/{id}', 'Admin\Category\CouponController@UpdateCoupon');
+
+		//-----------Newslater----------
+Route::get('admin/newsletter', 'Admin\Others\NewsletterController@Newsletter')->name('admin.newsletter');
+Route::get('delete/subscribe/{id}', 'Admin\Others\NewsletterController@DeleteSubscribe');
+
+
+//-----Frontend Routes-----
+		//-----Newsletter------
+Route::post('store/newsletter', 'FrontendController@StoreNewsletter')->name('store.newsletter');

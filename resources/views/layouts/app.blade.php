@@ -14,6 +14,8 @@
 <link rel="stylesheet" type="text/css" href="{{ asset('public/frontend/plugins/slick-1.8.0/slick.css') }}">
 <link rel="stylesheet" type="text/css" href="{{ asset('public/frontend/styles/main_styles.css') }}">
 <link rel="stylesheet" type="text/css" href="{{ asset('public/frontend/styles/responsive.css') }}">
+<!-- Toaster -->
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.1.4/toastr.min.css">
 
 </head>
 
@@ -460,6 +462,57 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 <script src="{{ asset('public/frontend/plugins/slick-1.8.0/slick.js')}}"></script>
 <script src="{{ asset('public/frontend/plugins/easing/easing.js')}}"></script>
 <script src="{{ asset('public/frontend/js/custom.js')}}"></script>
+
+ <!-- Toaster -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.1.4/toastr.min.js"></script>
+
+<!-- Sweet alert -->
+<script src="{{ asset('https://unpkg.com/sweetalert/dist/sweetalert.min.js')}}"></script>
+
+<script>
+   @if(Session::has('message'))
+    var type = "{{ Session::get('alert-type', 'info') }}";
+    switch(type){
+        case 'info':
+            toastr.info("{{ Session::get('message') }}");
+            break;
+
+        case 'warning':
+            toastr.warning("{{ Session::get('message') }}");
+            break;
+
+        case 'success':
+            toastr.success("{{ Session::get('message') }}");
+            break;
+
+        case 'error':
+            toastr.error("{{ Session::get('message') }}");
+            break;
+    }
+  @endif
+</script>
+
+<script>  
+     $(document).on("click", "#delete", function(e){
+         e.preventDefault();
+         var link = $(this).attr("href");
+            swal({
+              title: "Are you Want to delete?",
+              text: "Once Delete, This will be Permanently Delete!",
+              icon: "warning",
+              buttons: true,
+              dangerMode: true,
+            })
+            .then((willDelete) => {
+              if (willDelete) {
+                   window.location.href = link;
+              } else {
+                swal("Safe Data!");
+              }
+            });
+        });
+</script>
+
 </body>
 
 </html>
