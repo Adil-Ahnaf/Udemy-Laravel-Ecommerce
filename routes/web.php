@@ -73,6 +73,18 @@ Route::get('admin/newsletter', 'Admin\Others\NewsletterController@Newsletter')->
 Route::get('delete/subscribe/{id}', 'Admin\Others\NewsletterController@DeleteSubscribe');
 
 
+		//--------Sun-category show with ajax----------
+Route::get('/get/subcategory/{category_id}', 'Admin\Others\ProductController@GetSubCat');
+
+
+		//----------Product-------------
+Route::get('admin/product/all', 'Admin\Others\ProductController@index')->name('all.product');
+Route::get('admin/product/add', 'Admin\Others\ProductController@create')->name('add.product');
+Route::post('admin/store/product', 'Admin\Others\ProductController@store')->name('store.product');
+
+
+
+
 //-----Frontend Routes-----
 		//-----Newsletter------
 Route::post('store/newsletter', 'FrontendController@StoreNewsletter')->name('store.newsletter');

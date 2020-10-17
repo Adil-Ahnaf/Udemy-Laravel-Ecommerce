@@ -40,6 +40,7 @@
             </table>
           </div><!-- table-wrapper -->
         </div><!-- card -->
+      </div>
     </div><!-- sl-mainpanel -->
     <!-- ########## END: MAIN PANEL ########## -->
 
