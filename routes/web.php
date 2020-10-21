@@ -81,6 +81,13 @@ Route::get('/get/subcategory/{category_id}', 'Admin\Others\ProductController@Get
 Route::get('admin/product/all', 'Admin\Others\ProductController@index')->name('all.product');
 Route::get('admin/product/add', 'Admin\Others\ProductController@create')->name('add.product');
 Route::post('admin/store/product', 'Admin\Others\ProductController@store')->name('store.product');
+Route::get('inactive/product/{id}', 'Admin\Others\ProductController@inactive');
+Route::get('active/product/{id}', 'Admin\Others\ProductController@active');
+Route::get('delete/product/{id}', 'Admin\Others\ProductController@delete');
+Route::get('view/product/{id}', 'Admin\Others\ProductController@view');
+Route::get('edit/product/{id}', 'Admin\Others\ProductController@edit');
+Route::post('update/product/info/{id}', 'Admin\Others\ProductController@updateInfo');
+Route::post('update/product/image/{id}', 'Admin\Others\ProductController@updateImage');
 
 
 

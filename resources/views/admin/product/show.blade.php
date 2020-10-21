@@ -16,29 +16,54 @@
           Product List
           <a href="{{ route('add.product') }}" class="btn btn-success btn-sm" style="float: right;">Add Product</a>
       	  </h6>
-          {{-- <div class="table-wrapper">
+          <div class="table-wrapper">
             <table id="datatable1" class="table display responsive nowrap">
               <thead>
                 <tr>
-                  <th class="wd-15p">ID</th>
-                  <th class="wd-15p">Category Name</th>
+                  <th class="wd-15p">Product Code</th>
+                  <th class="wd-15p">Product Name</th>
+                  <th class="wd-15p">Image</th>
+                  <th class="wd-15p">Category</th>
+                  <th class="wd-15p">Brand</th>
+                  <th class="wd-15p">Quantity</th>
+                  <th class="wd-15p">Status</th>
                   <th class="wd-20p">Action</th>
                 </tr>
               </thead>
               <tbody>
-              	@foreach($category as $key=>$row)
+              	@foreach($product as $row)
                 <tr>
-                  <td> {{$key +1}} </td>
-                  <td> {{$row->category_name}} </td>
+                  <td> {{$row->product_code}} </td>
+                  <td> {{$row->product_name}} </td>
+                  <td> <img src="{{ URL::to($row->image_one) }}" height="50px;" width="50px;"> </td>
+                  <td> {{$row->category->category_name}} </td>
+                  <td> {{$row->brand->brand_name}} </td>
+                  <td> {{$row->product_quantity}} </td>
+
                   <td>
-                  	<a href="{{ URL::to('edit/category/'.$row->id) }}" class="btn btn-primary btn-sm">Edit</a>
-                  	<a href="{{ URL::to('delete/category/'.$row->id) }}" class="btn btn-danger btn-sm" id="delete">Delete</a>
+                      @if($row->status == 1)
+                        <span class="badge badge-success">Active</span>
+                      @else
+                        <span class="badge badge-danger">Inactive</span>
+                      @endif  
+                  </td>
+            
+                  <td>
+                  	<a href="{{ URL::to('edit/product/'.$row->id) }}" class="btn btn-primary btn-sm" title="Edit"> <i class="fa fa-edit"></i> </a> |
+                  	<a href="{{ URL::to('delete/product/'.$row->id) }}" class="btn btn-danger btn-sm" title="Delete" id="delete"> <i class="fa fa-trash"></i> </a> |
+                    <a href="{{ URL::to('view/product/'.$row->id) }}" class="btn btn-warning btn-sm" title="Show"> <i class="fa fa-eye"></i> </a> |
+
+                    @if($row->status == 1)
+                         <a href="{{ URL::to('inactive/product/'.$row->id) }}" class="btn btn-info btn-sm" title="Inactive"> <i class="fa fa-thumbs-down"></i> </a>
+                      @else
+                        <a href="{{ URL::to('active/product/'.$row->id) }}" class="btn btn-danger btn-sm" title="Active"> <i class="fa fa-thumbs-up"></i> </a>
+                      @endif
                   </td>
                 </tr>
                 @endforeach
               </tbody>
             </table>
-          </div><!-- table-wrapper --> --}}
+          </div><!-- table-wrapper -->
         </div><!-- card -->
       </div>
     </div><!-- sl-mainpanel -->
