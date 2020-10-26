@@ -102,6 +102,18 @@
         </ul>
         <a href="#" class="sl-menu-link">
           <div class="sl-menu-item">
+            <i class="menu-item-icon icon ion-ios-paper-outline tx-24"></i>
+            <span class="menu-item-label">Blog</span>
+            <i class="menu-item-arrow fa fa-angle-down"></i>
+          </div><!-- menu-item -->
+        </a><!-- sl-menu-link -->
+        <ul class="sl-menu-sub nav flex-column">
+          <li class="nav-item"><a href="{{ route('blog.category') }}" class="nav-link">Blog Category</a></li>
+          <li class="nav-item"><a href="{{ route('add.post') }}" class="nav-link">Add Post</a></li>
+          <li class="nav-item"><a href="{{ route('all.post') }}" class="nav-link">Post List</a></li>
+        </ul>
+        <a href="#" class="sl-menu-link">
+          <div class="sl-menu-item">
             <i class="menu-item-icon icon ion-ios-filing-outline tx-24"></i>
             <span class="menu-item-label">Others</span>
             <i class="menu-item-arrow fa fa-angle-down"></i>
@@ -376,6 +388,21 @@
 
         // Summernote editor
         $('#summernote').summernote({
+          height: 150,
+          tooltip: false
+        })
+      });
+    </script>
+
+    <script>
+      $(function(){
+        'use strict';
+
+        // Inline editor
+        var editor = new MediumEditor('.editable');
+
+        // Summernote editor
+        $('#summernote1').summernote({
           height: 150,
           tooltip: false
         })

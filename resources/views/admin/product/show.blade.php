@@ -49,9 +49,9 @@
                   </td>
             
                   <td>
-                  	<a href="{{ URL::to('edit/product/'.$row->id) }}" class="btn btn-primary btn-sm" title="Edit"> <i class="fa fa-edit"></i> </a> |
-                  	<a href="{{ URL::to('delete/product/'.$row->id) }}" class="btn btn-danger btn-sm" title="Delete" id="delete"> <i class="fa fa-trash"></i> </a> |
-                    <a href="{{ URL::to('view/product/'.$row->id) }}" class="btn btn-warning btn-sm" title="Show"> <i class="fa fa-eye"></i> </a> |
+                  	<a href="{{ URL::to('edit/product/'.$row->id) }}" class="btn btn-primary btn-sm" title="Edit"> <i class="fa fa-edit"></i> </a>
+                  	<a href="{{ URL::to('delete/product/'.$row->id) }}" class="btn btn-danger btn-sm" title="Delete" id="delete"> <i class="fa fa-trash"></i> </a>
+                    <a href="{{ URL::to('view/product/'.$row->id) }}" class="btn btn-warning btn-sm" title="Show"> <i class="fa fa-eye"></i> </a>
 
                     @if($row->status == 1)
                          <a href="{{ URL::to('inactive/product/'.$row->id) }}" class="btn btn-info btn-sm" title="Inactive"> <i class="fa fa-thumbs-down"></i> </a>

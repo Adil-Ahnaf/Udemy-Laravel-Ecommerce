@@ -88,17 +88,23 @@
                   <input class="form-control" type="text" name="selling_price" placeholder="Enter product price" required="">
                 </div>
               </div><!-- col-4 -->
+              <div class="col-lg-8">
+                <div class="form-group">
+                  <label class="form-control-label">Video Link: </label>
+                  <input class="form-control" type="text" name="video_link"placeholder="https://example.com" pattern="https://.*" size="500">
+                </div>
+              </div><!-- col-4 -->
+              <div class="col-lg-4">
+                <div class="form-group">
+                  <label class="form-control-label">Discount Price: </label>
+                  <input class="form-control" type="text" name="discount_price" placeholder="Enter product discount (%)">
+                </div>
+              </div><!-- col-4 -->
               <div class="col-lg-12">
                 <div class="form-group">
                   <label class="form-control-label">Product Details: </label>
                   <textarea class="form-control" name="product_details" id="summernote"> </textarea>
                   
-                </div>
-              </div><!-- col-4 -->
-              <div class="col-lg-12">
-                <div class="form-group">
-                  <label class="form-control-label">Video Link: </label>
-                  <input class="form-control" type="url" name="video_link"placeholder="https://example.com" pattern="https://.*" size="500">
                 </div>
               </div><!-- col-4 -->
               <div class="col-lg-4">

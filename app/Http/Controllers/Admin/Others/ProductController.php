@@ -54,6 +54,7 @@ class ProductController extends Controller
         $product->product_size      = $request->product_size;
         $product->product_color     = $request->product_color;
         $product->selling_price     = $request->selling_price;
+        $product->discount_price     = $request->discount_price;
         $product->product_details   = $request->product_details;
         $product->video_link        = $request->video_link;
         $product->main_slider       = $request->main_slider;
@@ -192,6 +193,7 @@ class ProductController extends Controller
         $product->product_size      = $request->product_size;
         $product->product_color     = $request->product_color;
         $product->selling_price     = $request->selling_price;
+        $product->discount_price     = $request->discount_price;
         $product->product_details   = $request->product_details;
         $product->video_link        = $request->video_link;
         $product->main_slider       = $request->main_slider;

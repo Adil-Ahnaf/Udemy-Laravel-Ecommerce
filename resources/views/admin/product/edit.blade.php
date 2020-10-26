@@ -101,6 +101,18 @@
                   <input class="form-control" type="text" name="selling_price" value="{{ $product->selling_price }}" required="">
                 </div>
               </div><!-- col-4 -->
+              <div class="col-lg-8">
+                <div class="form-group">
+                  <label class="form-control-label">Video Link: </label>
+                  <input class="form-control" type="url" name="video_link"placeholder="https://example.com" pattern="https://.*" size="500" value="{{ $product->video_link }}">
+                </div>
+              </div><!-- col-4 -->
+              <div class="col-lg-4">
+                <div class="form-group">
+                  <label class="form-control-label">Discount Price: </label>
+                  <input class="form-control" type="text" name="discount_price" value="{{ $product->discount_price }}">
+                </div>
+              </div><!-- col-4 -->
               <div class="col-lg-12">
                 <div class="form-group">
                   <label class="form-control-label">Product Details: </label>
@@ -108,12 +120,6 @@
                     {{ $product->product_details }}
                   </textarea>
                   
-                </div>
-              </div><!-- col-4 -->
-              <div class="col-lg-12">
-                <div class="form-group">
-                  <label class="form-control-label">Video Link: </label>
-                  <input class="form-control" type="url" name="video_link"placeholder="https://example.com" pattern="https://.*" size="500" value="{{ $product->video_link }}">
                 </div>
               </div><!-- col-4 -->
             </div><!-- row -->

@@ -91,6 +91,21 @@ Route::post('update/product/image/{id}', 'Admin\Others\ProductController@updateI
 
 
 
+		//--------Blog & Post-----------
+Route::get('admin/blog', 'Admin\Others\PostController@Blog')->name('blog.category');
+Route::post('admin/store/blog', 'Admin\Others\PostController@StoreBlog')->name('store.blog.category');
+Route::get('delete/blog/category/{id}', 'Admin\Others\PostController@DeleteBlog');
+Route::get('edit/blog/category/{id}', 'Admin\Others\PostController@EditBlog');
+Route::post('update/blog/category/{id}', 'Admin\Others\PostController@UpdateBlog');
+
+Route::get('admin/post/add', 'Admin\Others\PostController@create')->name('add.post');
+Route::post('admin/store/post', 'Admin\Others\PostController@store')->name('store.post');
+Route::get('admin/post/all', 'Admin\Others\PostController@index')->name('all.post');
+Route::get('delete/post/{id}', 'Admin\Others\PostController@delete');
+Route::get('edit/post/{id}', 'Admin\Others\PostController@edit');
+Route::post('update/post/{id}', 'Admin\Others\PostController@update');
+
+
 
 //-----Frontend Routes-----
 		//-----Newsletter------
