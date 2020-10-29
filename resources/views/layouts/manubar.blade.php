@@ -22,10 +22,10 @@
                     <h1 class="banner_text">{{ $slider->product_name }}</h1>
 
                     @if( $slider->discount_price == null)
-                        <h1 class="banner_text">{{ $slider->selling_price }}</h1>
+                        <h1 class="banner_text">৳ {{ $slider->selling_price }}</h1>
                     @else
 
-                         <div class="banner_price"><span>{{ $slider->selling_price }}</span>{{ $slider->discount_price }}</div>
+                         <div class="banner_price"><span>৳ {{ $slider->selling_price }}</span>৳  {{ $slider->discount_price }}</div>
 
                     @endif
 
