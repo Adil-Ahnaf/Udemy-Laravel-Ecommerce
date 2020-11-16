@@ -61,7 +61,7 @@
               </div><!-- col-4 -->
               <div class="col-lg-4">
                 <div class="form-group mg-b-10-force">
-                  <label class="form-control-label">Brand:</label>
+                  <label class="form-control-label">Brand: <span class="tx-danger">*</span></label>
                   <select class="form-control select2" name="brand_id">
                     <option label="Choose Brand"></option>
                     @foreach($brand as $row)

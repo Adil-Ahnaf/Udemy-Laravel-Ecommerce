@@ -58,9 +58,23 @@
                                 </ul>
                             </div>
                             <div class="top_bar_user">
-                                <div class="user_icon"><img src="{{ asset('public/frontend/images/user.svg')}}" alt=""></div>
-                                <div><a href="{{ route('register') }}">Register</a></div>
-                                <div><a href="{{ route('login') }}">Sign in</a></div>
+
+                                @guest
+                                    <div class="user_icon"><img src="{{ asset('public/frontend/images/user.svg')}}" alt=""></div>
+                                    <div><a href="{{ route('register') }}">Register</a></div>
+                                    <div><a href="{{ route('login') }}">Sign in</a></div>
+                                @else
+                                <ul class="standard_dropdown top_bar_dropdown">
+                                    <li>
+                                        <a href="{{ route('home') }}"><div class="user_icon"><img src="{{ asset('public/frontend/images/user.svg')}}" alt=""></div>Profile<i class="fas fa-chevron-down"></i></a>
+                                        <ul>
+                                            <li><a href="#">Wishlist</a></li>
+                                            <li><a href="#">Checkout</a></li>
+                                            <li><a href="#">Others</a></li>
+                                        </ul>
+                                    </li>
+                                @endguest
+                                
                             </div>
                         </div>
                     </div>
@@ -128,7 +142,7 @@
                             <div class="cart">
                                 <div class="cart_container d-flex flex-row align-items-center justify-content-end">
                                     <div class="cart_icon">
-                                        <img src="images/cart.png" alt="">
+                                        <img src="{{ asset('public/frontend/images/cart.png') }}" alt="">
                                         <div class="cart_count"><span>10</span></div>
                                     </div>
                                     <div class="cart_content">
@@ -142,117 +156,8 @@
                 </div>
             </div>
         </div>
-        
-        <!-- Main Navigation -->
 
-        <nav class="main_nav">
-            <div class="container">
-                <div class="row">
-                    <div class="col">
-                        
-                        <div class="main_nav_content d-flex flex-row">
 
-                            <!-- Categories Menu -->
-
-                            <div class="cat_menu_container">
-                                <div class="cat_menu_title d-flex flex-row align-items-center justify-content-start">
-                                    <div class="cat_burger"><span></span><span></span><span></span></div>
-                                    <div class="cat_menu_text">categories</div>
-                                </div>
-
-                                <ul class="cat_menu">
-                                    @foreach($category as $cat)
-                                    <li class="hassubs">
-                                        <a href="#">{{ $cat->category_name }}<i class="fas fa-chevron-right"></i></a>
-<!-- Get all sub-category form DB-->
-@php
-    $sub = DB::table('subcategories')->where('category_id', $cat->id)->get();
-@endphp
-<!-- Finish -->
-                                        <ul>
-                                            @foreach($sub as $row)
-                                            <li>
-                                                <a href="#">{{ $row->subcategory_name }}<i class="fas fa-chevron-right"></i></a>
-                                            </li>
-                                            @endforeach
-                                        </ul>
-                                    </li>
-                                    @endforeach
-                                </ul>
-                            </div>
-
-                            <!-- Main Nav Menu -->
-
-                            <div class="main_nav_menu ml-auto">
-                                <ul class="standard_dropdown main_nav_dropdown">
-                                    <li><a href="#">Home<i class="fas fa-chevron-down"></i></a></li>
-                                    <li class="hassubs">
-                                        <a href="#">Super Deals<i class="fas fa-chevron-down"></i></a>
-                                        <ul>
-                                            <li>
-                                                <a href="#">Menu Item<i class="fas fa-chevron-down"></i></a>
-                                                <ul>
-                                                    <li><a href="#">Menu Item<i class="fas fa-chevron-down"></i></a></li>
-                                                    <li><a href="#">Menu Item<i class="fas fa-chevron-down"></i></a></li>
-                                                    <li><a href="#">Menu Item<i class="fas fa-chevron-down"></i></a></li>
-                                                </ul>
-                                            </li>
-                                            <li><a href="#">Menu Item<i class="fas fa-chevron-down"></i></a></li>
-                                            <li><a href="#">Menu Item<i class="fas fa-chevron-down"></i></a></li>
-                                            <li><a href="#">Menu Item<i class="fas fa-chevron-down"></i></a></li>
-                                        </ul>
-                                    </li>
-                                    <li class="hassubs">
-                                        <a href="#">Featured Brands<i class="fas fa-chevron-down"></i></a>
-                                        <ul>
-                                            <li>
-                                                <a href="#">Menu Item<i class="fas fa-chevron-down"></i></a>
-                                                <ul>
-                                                    <li><a href="#">Menu Item<i class="fas fa-chevron-down"></i></a></li>
-                                                    <li><a href="#">Menu Item<i class="fas fa-chevron-down"></i></a></li>
-                                                    <li><a href="#">Menu Item<i class="fas fa-chevron-down"></i></a></li>
-                                                </ul>
-                                            </li>
-                                            <li><a href="#">Menu Item<i class="fas fa-chevron-down"></i></a></li>
-                                            <li><a href="#">Menu Item<i class="fas fa-chevron-down"></i></a></li>
-                                            <li><a href="#">Menu Item<i class="fas fa-chevron-down"></i></a></li>
-                                        </ul>
-                                    </li>
-                                    <li class="hassubs">
-                                        <a href="#">Pages<i class="fas fa-chevron-down"></i></a>
-                                        <ul>
-                                            <li><a href="shop.html">Shop<i class="fas fa-chevron-down"></i></a></li>
-                                            <li><a href="product.html">Product<i class="fas fa-chevron-down"></i></a></li>
-                                            <li><a href="blog.html">Blog<i class="fas fa-chevron-down"></i></a></li>
-                                            <li><a href="blog_single.html">Blog Post<i class="fas fa-chevron-down"></i></a></li>
-                                            <li><a href="regular.html">Regular Post<i class="fas fa-chevron-down"></i></a></li>
-                                            <li><a href="cart.html">Cart<i class="fas fa-chevron-down"></i></a></li>
-                                            <li><a href="contact.html">Contact<i class="fas fa-chevron-down"></i></a></li>
-                                        </ul>
-                                    </li>
-                                    <li><a href="blog.html">Blog<i class="fas fa-chevron-down"></i></a></li>
-                                    <li><a href="contact.html">Contact<i class="fas fa-chevron-down"></i></a></li>
-                                </ul>
-                            </div>
-
-                            <!-- Menu Trigger -->
-
-                            <div class="menu_trigger_container ml-auto">
-                                <div class="menu_trigger d-flex flex-row align-items-center justify-content-end">
-                                    <div class="menu_burger">
-                                        <div class="menu_trigger_text">menu</div>
-                                        <div class="cat_burger menu_burger_inner"><span></span><span></span><span></span></div>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </nav>
-        
-        <!-- Menu -->
 
         <div class="page_menu">
             <div class="container">
@@ -337,7 +242,6 @@
                 </div>
             </div>
         </div>
-
     </header>
     
     @yield('content')
