@@ -14,6 +14,8 @@
 <link rel="stylesheet" type="text/css" href="{{ asset('public/frontend/plugins/slick-1.8.0/slick.css') }}">
 <link rel="stylesheet" type="text/css" href="{{ asset('public/frontend/styles/main_styles.css') }}">
 <link rel="stylesheet" type="text/css" href="{{ asset('public/frontend/styles/responsive.css') }}">
+
+<link rel="stylesheet" href="sweetalert2.min.css">
 <!-- Toaster -->
 <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.1.4/toastr.min.css">
 
@@ -367,6 +369,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.1.4/toastr.min.js"></script>
 
 <!-- Sweet alert -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 <script src="{{ asset('https://unpkg.com/sweetalert/dist/sweetalert.min.js')}}"></script>
 
 <script>

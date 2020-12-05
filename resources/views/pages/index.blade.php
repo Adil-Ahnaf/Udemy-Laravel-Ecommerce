@@ -207,7 +207,7 @@
                                     <div class="featured_slider_item">
                                         <div class="border_active"></div>
                                         <div class="product_item discount d-flex flex-column align-items-center justify-content-center text-center">
-                                            <div class="product_image d-flex flex-column align-items-center justify-content-center"><img src="{{ asset( $row->image_one )}}" alt=""></div>
+                                            <div class="product_image d-flex flex-column align-items-center justify-content-center"><img src="{{ asset( $row->image_one )}}" alt=""  style="height: 120px; width: 100px;"></div>
                                             <div class="product_content">
                                                 @if( $row->discount_price == null )
                                                 <div class="product_price">৳ {{$row->selling_price}}</div>
@@ -224,7 +224,10 @@
                                                     <button class="product_cart_button">Add to Cart</button>
                                                 </div>
                                             </div>
-                                            <div class="product_fav"><i class="fas fa-heart"></i></div>
+                                            <button class="addwishlist" data-id="{{ $row->id }}">
+                                                <div class="product_fav"><i class="fas fa-heart"></i></div>
+                                            </button>
+                                           
                                             <ul class="product_marks">
                                                 @if( $row->discount_price == null)
                                                     <li class="product_mark product_discount" style="background: Blue">new</li>
@@ -411,7 +414,7 @@
                                         <div class="arrivals_slider_item">
                                             <div class="border_active"></div>
                                             <div class="product_item is_new d-flex flex-column align-items-center justify-content-center text-center">
-                                                <div class="product_image d-flex flex-column align-items-center justify-content-center"><img src="{{ asset( $row->image_one )}}" alt=""></div>
+                                                <div class="product_image d-flex flex-column align-items-center justify-content-center"><img src="{{ asset( $row->image_one )}}" alt="" style="height: 120px; width: 100px;"></div>
                                                 <div class="product_content">
 
                                                 @if($row->discount_price == null)
@@ -428,7 +431,9 @@
                                                         <button class="product_cart_button">Add to Cart</button>
                                                     </div>
                                                 </div>
+                                                <button class="addwishlist" data-id="{{ $row->id }}"> 
                                                 <div class="product_fav"><i class="fas fa-heart"></i></div>
+                                               </button>
                                                 <ul class="product_marks">
                                                     <li class="product_mark product_discount">-25%</li>
                                                     <li class="product_mark product_new">new</li>
@@ -448,7 +453,7 @@
                                         <div class="arrivals_slider_item">
                                             <div class="border_active"></div>
                                             <div class="product_item is_new d-flex flex-column align-items-center justify-content-center text-center">
-                                                <div class="product_image d-flex flex-column align-items-center justify-content-center"><img src="{{ asset( $row->image_one )}}" alt=""></div>
+                                                <div class="product_image d-flex flex-column align-items-center justify-content-center"><img src="{{ asset( $row->image_one )}}" alt="" style="height: 120px; width: 100px;"></div>
                                                 <div class="product_content">
                                                     @if($row->discount_price == null)
                                                         <div class="product_price">৳ {{ $row->selling_price }}</div>
@@ -464,7 +469,9 @@
                                                         <button class="product_cart_button">Add to Cart</button>
                                                     </div>
                                                 </div>
+                                                <button class="addwishlist" data-id="{{ $row->id }}"> 
                                                 <div class="product_fav"><i class="fas fa-heart"></i></div>
+                                                </button>
                                                 <ul class="product_marks">
                                                     <li class="product_mark product_discount">-25%</li>
                                                     <li class="product_mark product_new">new</li>
@@ -484,7 +491,7 @@
                                         <div class="arrivals_slider_item">
                                             <div class="border_active"></div>
                                             <div class="product_item is_new d-flex flex-column align-items-center justify-content-center text-center">
-                                                <div class="product_image d-flex flex-column align-items-center justify-content-center"><img src="{{ asset( $row->image_one )}}" alt=""></div>
+                                                <div class="product_image d-flex flex-column align-items-center justify-content-center"><img src="{{ asset( $row->image_one )}}" alt="" style="height: 120px; width: 100px;"></div>
                                                 <div class="product_content">
                                                     @if($row->discount_price == null)
                                                         <div class="product_price">৳ {{ $row->selling_price }}</div>
@@ -500,7 +507,9 @@
                                                         <button class="product_cart_button">Add to Cart</button>
                                                     </div>
                                                 </div>
+                                                <button class="addwishlist" data-id="{{ $row->id }}"> 
                                                 <div class="product_fav"><i class="fas fa-heart"></i></div>
+                                                </button>
                                                 <ul class="product_marks">
                                                     <li class="product_mark product_discount">-25%</li>
                                                     <li class="product_mark product_new">new</li>
@@ -520,7 +529,7 @@
                                         <div class="arrivals_slider_item">
                                             <div class="border_active"></div>
                                             <div class="product_item is_new d-flex flex-column align-items-center justify-content-center text-center">
-                                                <div class="product_image d-flex flex-column align-items-center justify-content-center"><img src="{{ asset( $row->image_one )}}" alt=""></div>
+                                                <div class="product_image d-flex flex-column align-items-center justify-content-center"><img src="{{ asset( $row->image_one )}}" alt="" style="height: 120px; width: 100px;"></div>
                                                 <div class="product_content">
                                                     @if($row->discount_price == null)
                                                         <div class="product_price">৳ {{ $row->selling_price }}</div>
@@ -536,7 +545,9 @@
                                                         <button class="product_cart_button">Add to Cart</button>
                                                     </div>
                                                 </div>
+                                                <button class="addwishlist" data-id="{{ $row->id }}"> 
                                                 <div class="product_fav"><i class="fas fa-heart"></i></div>
+                                                </button>
                                                 <ul class="product_marks">
                                                     <li class="product_mark product_discount">-25%</li>
                                                     <li class="product_mark product_new">new</li>
@@ -589,8 +600,10 @@
                                             <div class="bestsellers_price discount">৳ {{$row->discount_price}}<span>৳ {{$row->selling_price}}</span></div>
                                         </div>
                                     </div>
-                                    
-                                    <div class="bestsellers_fav active"><i class="fas fa-heart"></i></div>
+                                    <button class="addwishlist" data-id="{{ $row->id }}"> 
+                                        <div class="bestsellers_fav active"><i class="fas fa-heart"></i></div>
+                                    </button>
+                                                                                  
                                     <ul class="bestsellers_marks">
                                         @php
                                             $amount = $row->selling_price - $row->discount_price;
@@ -727,7 +740,9 @@
                                         @endif 
 
                                     </ul>
-                                    <div class="trends_fav"><i class="fas fa-heart"></i></div>
+                                    <button class="addwishlist" data-id="{{ $row->id }}">
+                                        <div class="trends_fav"><i class="fas fa-heart"></i></div>
+                                    </button>
                                 </div>
                             </div>
                             @endforeach
@@ -1028,5 +1043,61 @@
             </div>
         </div>
     </div>
+
+
+<script
+  src="https://code.jquery.com/jquery-3.4.1.min.js"
+  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+  crossorigin="anonymous">
+      
+</script>
+
+<script type="text/javascript">
+    
+   $(document).ready(function(){
+     $('.addwishlist').on('click', function(){
+        var id = $(this).data('id');
+        if (id) {
+            $.ajax({
+                url: " {{ url('add/wishlist/') }}/"+id,
+                type:"GET",
+                datType:"json",
+                success:function(data){
+             const Toast = Swal.mixin({
+                  toast: true,
+                  position: 'top-end',
+                  showConfirmButton: false,
+                  timer: 3000,
+                  timerProgressBar: true,
+                  onOpen: (toast) => {
+                    toast.addEventListener('mouseenter', Swal.stopTimer)
+                    toast.addEventListener('mouseleave', Swal.resumeTimer)
+                  }
+                })
+
+             if ($.isEmptyObject(data.error)) {
+
+                Toast.fire({
+                  icon: 'success',
+                  title: data.success
+                })
+             }else{
+                 Toast.fire({
+                  icon: 'error',
+                  title: data.error
+                })
+             }
+ 
+
+                },
+            });
+
+        }else{
+            alert('danger');
+        }
+     });
+
+   });
+</script>
 
 @endsection

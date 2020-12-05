@@ -110,3 +110,7 @@ Route::post('update/post/{id}', 'Admin\Others\PostController@update');
 //-----Frontend Routes-----
 		//-----Newsletter------
 Route::post('store/newsletter', 'FrontendController@StoreNewsletter')->name('store.newsletter');
+
+
+		//-------Wishlist-------
+Route::get('add/wishlist/{id}', 'WishlistController@AddWishlist');
